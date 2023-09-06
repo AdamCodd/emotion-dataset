@@ -2,7 +2,7 @@
 ## Overview
 This dataset is designed for training machine learning models to perform emotion analysis. It contains text samples from Twitter labeled with six different emotions: sadness, joy, love, anger, fear, and surprise. The dataset is balanced, meaning that it has an equal number of samples for each label.
 
-This dataset is originally sourced from [Hugging Face's Datasets Hub](https://huggingface.co/datasets/dair-ai/emotion), but the initial dataset was unbalanced. We have balanced it to ensure an equal number of samples for each emotion label.
+This dataset is originally sourced from [Hugging Face's Datasets Hub](https://huggingface.co/datasets/dair-ai/emotion), but the initial dataset was unbalanced and had some duplicates samples. Thus, this dataset has been deduplicated and balanced to ensure an equal number of samples for each emotion label.
 
 ## Labels
 Label 0: Sadness
@@ -13,11 +13,11 @@ Label 4: Fear
 Label 5: Surprise
 
 ## File structure
-The dataset is divided into three JSONL files:
+The dataset is divided into three folders:
 
-* train.jsonl: Contains 16,000 samples for training.
-* validation.jsonl: Contains 2,000 samples for validation.
-* test.jsonl: Contains 2,000 samples for testing.
+* <b>Raw</b>: Contains the raw data with the text and emotion in string (sadness, joy...)
+* <b>Unsplit</b>: Contains the full dataset balanced and properly labeled
+* <b>Split</b>: Contains the split_emotion_balanced with 20,000 samples, the train.jsonl with 16,000 samples for training, the validation.jsonl with 2,000 samples for validation and the test.jsonl with 2,000 samples for testing.
 
 Each line in these JSONL files is a JSON object with the following format:
 ```json
